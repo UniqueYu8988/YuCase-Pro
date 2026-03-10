@@ -43,6 +43,8 @@ function createWindow() {
     frame: false, // 皇家标准：自定义标题栏
     transparent: true,
     backgroundColor: "#00000000",
+    resizable: false,
+    maximizable: false,
     icon: path.join(__dirname, "../case256x.png"), // v1.0: 任务栏与窗口图标烙印
   });
 

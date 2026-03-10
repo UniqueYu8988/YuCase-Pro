@@ -4,10 +4,10 @@
   --color-royal-purple: #a855f7;
   --color-royal-purple-light: #e9d5ff;
   --color-geek-dark: #0a0a0f;
-  
+
   --radius-royal: 20px;
   --radius-item: 14px;
-  
+
   --blur-royal: 40px;
 }
 
@@ -18,19 +18,33 @@
 body {
   margin: 0;
   background: transparent;
-  font-family: 'PingFang SC', 'MiSans', 'HarmonyOS Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    "PingFang SC",
+    "MiSans",
+    "HarmonyOS Sans",
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
   overflow: hidden;
   user-select: none;
 }
 
 /* 专属背景彩蛋 - Always here for Yu 💍 */
 .royal-root::before {
-  content: "Always here for Yu 💍";
+  content: "Always here for Y💍U";
   position: absolute;
   bottom: 100px;
   left: 50%;
   transform: translateX(-50%);
-  font-family: 'Cursive', 'Brush Script MT', 'Dancing Script', cursive;
+  font-family: "Cursive", "Brush Script MT", "Dancing Script", cursive;
   font-size: 24px;
   color: rgba(168, 85, 247, 0.05);
   pointer-events: none;
@@ -119,8 +133,14 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* v7.0 视觉对齐与隐藏 */
@@ -136,8 +156,15 @@ body {
 
 /* v7.11: 皇家紫耀呼吸动效 */
 @keyframes pulse-slow {
-  0%, 100% { opacity: 0.6; transform: scale(0.98); }
-  50% { opacity: 1; transform: scale(1); }
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .animate-pulse-slow {

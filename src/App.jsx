@@ -371,7 +371,6 @@ const App = () => {
           </div>
           <div className="flex gap-4 no-drag relative z-[999]">
             <Minus className="w-4 h-4 cursor-pointer hover:text-royal-purple transition-colors escape-hatch" onClick={() => window.electronAPI?.windowMin()} />
-            <Square className="w-3 h-3 cursor-pointer hover:text-royal-purple transition-colors mt-0.5 escape-hatch" onClick={() => window.electronAPI?.windowMax()} />
             <X className="w-4 h-4 cursor-pointer hover:text-red-500 transition-colors escape-hatch" onClick={() => window.electronAPI?.windowClose()} />
           </div>
         </div>
@@ -521,7 +520,7 @@ const App = () => {
               {parsedRecords.length === 0 && !currentPath && (
                 <div className="h-full flex flex-col items-center justify-center text-white/5 gap-3">
                     <div className="w-10 h-10 border-2 border-dashed border-white/5 rounded-full" />
-                    <div className="text-[10px] uppercase font-black tracking-[0.3em] font-cursive italic">Always here for Yu 💍</div>
+                    <div className="text-[10px] uppercase font-black tracking-[0.3em] font-cursive italic">Always here for Y💍U</div>
                 </div>
               )}
             </div>
