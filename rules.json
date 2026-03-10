@@ -1,0 +1,329 @@
+[
+    {
+        "key": "付款方式",
+        "regex": "付款方式[：:\\s]*(\\d+)",
+        "mapping": null,
+        "index": 0
+    },
+    {
+        "key": "住院次数",
+        "regex": "第\\s*(\\d+)\\s*次住院",
+        "mapping": null,
+        "index": 2
+    },
+    {
+        "key": "病案号",
+        "regex": "病案号[：:\\s]*([A-Za-z0-9]+)",
+        "mapping": null,
+        "index": 3
+    },
+    {
+        "key": "姓名",
+        "regex": "姓名[：:\\s]*([\\u4e00-\\u9fa5]+?)(?=\\s*性别|\\s*第|\\s*\\d|\\s*$)",
+        "mapping": null,
+        "index": 4
+    },
+    {
+        "key": "性别",
+        "regex": "性别[：:\\s]*(\\d)",
+        "mapping": {
+            "1": "男",
+            "2": "女"
+        },
+        "index": 5
+    },
+    {
+        "key": "出生日期",
+        "regex": "出生日期[：:\\s]*([\\d-]+)",
+        "mapping": null,
+        "index": 6
+    },
+    {
+        "key": "年龄",
+        "regex": "年龄[：:\\s]*(\\d+)\\s*岁",
+        "mapping": null,
+        "index": 7
+    },
+    {
+        "key": "籍贯",
+        "regex": "籍贯[：:\\s]*([\\u4e00-\\u9fa5]+)",
+        "mapping": null,
+        "index": 13
+    },
+    {
+        "key": "民族",
+        "regex": "民族[：:\\s]*([\\u4e00-\\u9fa5]+)",
+        "mapping": null,
+        "index": 14
+    },
+    {
+        "key": "身份证号",
+        "regex": "身份证号[：:\\s]*([\\dXx]+)",
+        "mapping": null,
+        "index": 15
+    },
+    {
+        "key": "职业",
+        "regex": "职业[：:\\s]*([\\u4e00-\\u9fa5]+)",
+        "mapping": null,
+        "index": 16
+    },
+    {
+        "key": "婚姻",
+        "regex": "婚姻[：:\\s]*(\\d)",
+        "mapping": {
+            "1": "未婚",
+            "2": "已婚",
+            "3": "丧偶",
+            "4": "离婚",
+            "5": "其他"
+        },
+        "index": 17
+    },
+    {
+        "key": "现住址",
+        "regex": "现住地址[：:\\s]*(.+?)(?=\\s*电话|\\s*邮政编码|$)",
+        "mapping": null,
+        "index": 18
+    },
+    {
+        "key": "患者电话",
+        "regex": "现住地址.*?电话[：:\\s]*([\\d-]+)",
+        "mapping": null,
+        "index": 19
+    },
+    {
+        "key": "户口地址",
+        "regex": "户口地址[：:\\s]*(.+?)(?=\\s*电话|\\s*邮政编码|$)",
+        "mapping": null,
+        "index": 21
+    },
+    {
+        "key": "联系人姓名",
+        "regex": "联系人姓名[：:\\s]*([\\u4e00-\\u9fa5]+?)(?=\\s*关系|\\s*地址|\\s*电话|$)",
+        "mapping": null,
+        "index": 26
+    },
+    {
+        "key": "关系",
+        "regex": "关系[：:\\s]*([\\u4e00-\\u9fa5]+)",
+        "mapping": null,
+        "index": 27
+    },
+    {
+        "key": "联系人地址",
+        "regex": "联系人姓名.*?地址[：:\\s]*(.+?)(?=\\s*电话|$)",
+        "mapping": null,
+        "index": 28
+    },
+    {
+        "key": "联系人电话",
+        "regex": "联系人姓名.*?电话[：:\\s]*([\\d-]+)",
+        "mapping": null,
+        "index": 29
+    },
+    {
+        "key": "入院时间",
+        "regex": "入院日期[：:\\s]*(\\d{4}-\\d{2}-\\d{2})",
+        "mapping": null,
+        "index": 32
+    },
+    {
+        "key": "入院科别",
+        "regex": "入院科别[：:\\s]*([\\u4e00-\\u9fa5]+)",
+        "mapping": null,
+        "index": 34
+    },
+    {
+        "key": "出院时间",
+        "regex": "出院日期[：:\\s]*(\\d{4}-\\d{2}-\\d{2})",
+        "mapping": null,
+        "index": 37
+    },
+    {
+        "key": "出院科别",
+        "regex": "出院科别[：:\\s]*([\\u4e00-\\u9fa5]+)",
+        "mapping": null,
+        "index": 39
+    },
+    {
+        "key": "实际住院天数",
+        "regex": "实际住院[：:\\s]*(\\d+)",
+        "mapping": null,
+        "index": 41
+    },
+    {
+        "key": "门诊诊断",
+        "regex": "门[（\\(]?急[）\\)]?诊诊断名称[：:\\s]*(.+?)(?=\\s*疾\\s*病\\s*编\\s*码|$)",
+        "mapping": null,
+        "index": [
+            44,
+            54
+        ]
+    },
+    {
+        "key": "疾病编码",
+        "regex": "疾病编码[：:\\s]*([A-Za-z0-9\\.]+)",
+        "mapping": null,
+        "index": [
+            45,
+            55
+        ]
+    },
+    {
+        "key": "科主任",
+        "regex": "科室主任[：:\\s]*([\\u4e00-\\u9fa5]+)",
+        "mapping": null,
+        "index": 109
+    },
+    {
+        "key": "主任医师",
+        "regex": "主\\(副主\\)任医师[：:\\s]*([\\u4e00-\\u9fa5]+)",
+        "mapping": null,
+        "index": 110
+    },
+    {
+        "key": "主治医师",
+        "regex": "主治医师[：:\\s]*([\\u4e00-\\u9fa5]+)",
+        "mapping": null,
+        "index": 111
+    },
+    {
+        "key": "住院医师",
+        "regex": "住院医师[：:\\s]*([\\u4e00-\\u9fa5]+)",
+        "mapping": null,
+        "index": 112
+    },
+    {
+        "key": "责任护士",
+        "regex": "责任护士[：:\\s]*([\\u4e00-\\u9fa5]+)",
+        "mapping": null,
+        "index": 113
+    },
+    {
+        "key": "质控医师",
+        "regex": "质控医师[：:\\s]*([\\u4e00-\\u9fa5]+)",
+        "mapping": null,
+        "index": 118
+    },
+    {
+        "key": "质控护士",
+        "regex": "质控护士[：:\\s]*([\\u4e00-\\u9fa5]+)",
+        "mapping": null,
+        "index": 119
+    },
+    {
+        "key": "质控日期",
+        "regex": "质控日期[：:\\s]*([\\d-]+)",
+        "mapping": null,
+        "index": 120
+    },
+    {
+        "key": "总费用",
+        "regex": "总费用[：:\\s]*([\\d\\.]+)",
+        "mapping": null,
+        "index": 198
+    },
+    {
+        "key": "自付金额",
+        "regex": "自付金额[：:\\s]*([\\d\\.]+)",
+        "mapping": null,
+        "index": 199
+    },
+    {
+        "key": "一般治疗费",
+        "regex": "一般治疗操作费[：:\\s]*([\\d\\.]+)",
+        "mapping": null,
+        "index": 203
+    },
+    {
+        "key": "护理费",
+        "regex": "护理费[：:\\s]*([\\d\\.]+)",
+        "mapping": null,
+        "index": 204
+    },
+    {
+        "key": "其他费用",
+        "regex": "\\(4\\)其他费用[：:\\s]*([\\d\\.]+)",
+        "mapping": null,
+        "index": 205
+    },
+    {
+        "key": "实验室诊断费",
+        "regex": "实验室诊断费[：:\\s]*([\\d\\.]+)",
+        "mapping": null,
+        "index": 207
+    },
+    {
+        "key": "影像学诊断费",
+        "regex": "影像学诊断费[：:\\s]*([\\d\\.]+)",
+        "mapping": null,
+        "index": 208
+    },
+    {
+        "key": "西药费",
+        "regex": "西药费[：:\\s]*([\\d\\.]+)",
+        "mapping": null,
+        "index": 227
+    },
+    {
+        "key": "中成药费",
+        "regex": "中成药费[：:\\s]*([\\d\\.]+)",
+        "mapping": null,
+        "index": 229
+    },
+    {
+        "key": "中草药费",
+        "regex": "中草药费[：:\\s]*([\\d\\.]+)",
+        "mapping": null,
+        "index": 231
+    },
+    {
+        "key": "其他费",
+        "regex": "\\(24\\)其他费[：:\\s]*([\\d\\.]+)",
+        "mapping": null,
+        "index": 240
+    },
+    {
+        "key": "病案质量",
+        "regex": "",
+        "mapping": null,
+        "index": 117,
+        "isFixed": true
+    },
+    {
+        "key": "中医诊疗",
+        "regex": "",
+        "mapping": null,
+        "index": 49,
+        "isFixed": true
+    },
+    {
+        "key": "离院方式",
+        "regex": "",
+        "mapping": null,
+        "index": 187,
+        "isFixed": true
+    },
+    {
+        "key": "国籍",
+        "regex": "",
+        "mapping": null,
+        "index": 8,
+        "isFixed": true
+    },
+    {
+        "key": "入院途径",
+        "regex": "",
+        "mapping": null,
+        "index": 30,
+        "isFixed": true
+    },
+    {
+        "key": "入院病情",
+        "regex": "",
+        "mapping": null,
+        "index": 56,
+        "isFixed": true
+    }
+]

@@ -1,0 +1,67 @@
+{
+  "name": "yucase-pro",
+  "productName": "YuCase Pro",
+  "version": "1.0.0",
+  "description": "Yu Series 终极病案极速填报引擎",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "electron": "wait-on http://localhost:5173 && cross-env NODE_ENV=development electron .",
+    "start": "concurrently \"npm run dev\" \"npm run electron\"",
+    "build": "vite build && electron-builder",
+    "build:backend": "pyinstaller --onefile --noconsole --distpath backend --name yucase_engine backend/handler.py",
+    "build:all": "npm run build:backend && npm run build"
+  },
+  "build": {
+    "appId": "com.yu.yucase-pro",
+    "productName": "YuCase Pro",
+    "asar": true,
+    "compression": "maximum",
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "icon": "case256x.png",
+      "target": [
+        "portable"
+      ]
+    },
+    "portable": {
+      "artifactName": "YuCase_Pro_${version}_ReadyToUse.exe",
+      "requestExecutionLevel": "admin"
+    },
+    "extraResources": [
+      {
+        "from": "backend/yucase_engine.exe",
+        "to": "backend/yucase_engine.exe"
+      },
+      "rules.json",
+      "case256x.png"
+    ]
+  },
+  "keywords": [],
+  "author": "Yu",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "@vitejs/plugin-react": "^5.1.4",
+    "autoprefixer": "^10.4.27",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "electron": "^40.8.0",
+    "electron-builder": "^26.8.1",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.1",
+    "vite": "^7.3.1",
+    "wait-on": "^9.0.4"
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "lucide-react": "^0.577.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  }
+}

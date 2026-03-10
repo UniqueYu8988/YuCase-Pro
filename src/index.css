@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@theme {
+  --color-royal-purple: #a855f7;
+  --color-royal-purple-light: #e9d5ff;
+  --color-geek-dark: #0a0a0f;
+  
+  --radius-royal: 20px;
+  --radius-item: 14px;
+  
+  --blur-royal: 40px;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: transparent;
+  font-family: 'PingFang SC', 'MiSans', 'HarmonyOS Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* 专属背景彩蛋 - Always here for Yu 💍 */
+.royal-root::before {
+  content: "Always here for Yu 💍";
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Cursive', 'Brush Script MT', 'Dancing Script', cursive;
+  font-size: 24px;
+  color: rgba(168, 85, 247, 0.05);
+  pointer-events: none;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  z-index: 0;
+}
+
+/* 隐形滚动条 - 铁律 */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* 全局皇家背景容器 */
+.royal-root {
+  @apply w-screen h-screen flex flex-col bg-geek-dark/95 backdrop-blur-royal rounded-royal overflow-hidden text-white border border-white/10 select-none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* 家族基因：全局隐藏原生滚动条 */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.glass-container {
+  @apply bg-geek-dark/80 backdrop-blur-royal border border-white/10;
+}
+
+.royal-shadow {
+  box-shadow: 0 8px 32px 0 rgba(168, 85, 247, 0.4);
+}
+
+/* 呼吸感顶栏 */
+.title-bar {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.window-container:hover .title-bar {
+  opacity: 1;
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* 交互元素抗拖拽 */
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+.drag-region {
+  -webkit-app-region: drag;
+}
+
+/* 逃生舱修复：确保关闭按钮高于拖拽区 */
+.escape-hatch {
+  -webkit-app-region: no-drag !important;
+  z-index: 999;
+  position: relative;
+}
+
+/* 高密度序列矩阵样式 */
+.sequence-row {
+  @apply relative flex items-center justify-between p-1.5 px-3 rounded-md border transition-all;
+}
+
+.drag-handle {
+  @apply cursor-grab active:cursor-grabbing opacity-0 hover:opacity-100 transition-opacity;
+}
+
+.gap-insert {
+  @apply absolute -bottom-1 left-0 right-0 h-2 z-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity translate-y-1/2;
+}
+
+.insert-btn {
+  @apply w-4 h-4 rounded-full bg-royal-purple text-white flex items-center justify-center shadow-[0_0_8px_rgba(168,85,247,0.6)] scale-0 transition-transform hover:scale-125;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* v7.0 视觉对齐与隐藏 */
+.hide-corner {
+  display: none !important;
+}
+
+.fixed-tag-polish {
+  @apply text-[11px] font-black tracking-[0.2em] px-2;
+  min-width: 52px;
+  text-align: center;
+}
+
+/* v7.11: 皇家紫耀呼吸动效 */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.6; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
