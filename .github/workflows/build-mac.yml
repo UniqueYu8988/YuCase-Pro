@@ -31,7 +31,9 @@ jobs:
         run: npm install
 
       - name: 🚀 执行终极封装口令 (Build Electron App)
-        run: npm run build # 在 Mac 上执行此命令会触发 electron-builder 生成 .dmg
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run build:all
 
       - name: 🎁 提取 Mac 专属安装包 (Upload Artifact)
         uses: actions/upload-artifact@v4
