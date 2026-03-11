@@ -17,9 +17,9 @@ const BACKEND_PATH = IS_PROD
     ? path.join(process.resourcesPath, 'backend')
     : path.resolve(__dirname, '../backend');
 
-// 如果是生产环境，直接调用打包后的 EXE；开发环境则调用 python 解释器执行 handler.py
+// 如果是生产环境，直接调用打包后的二进制；开发环境则调用 python 解释器执行 handler.py
 const ENGINE_BIN = IS_PROD
-    ? path.join(BACKEND_PATH, 'yucase_engine.exe')
+    ? path.join(BACKEND_PATH, process.platform === 'win32' ? 'yucase_engine.exe' : 'yucase_engine')
     : 'python';
 
 const ENGINE_ENTRY = IS_PROD

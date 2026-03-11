@@ -12,7 +12,7 @@
     "build:backend": "pyinstaller --onefile --noconsole --distpath backend --name yucase_engine backend/handler.py",
     "build:all": "npm run build:backend && npm run build"
   },
-  "build": {
+    "build": {
     "appId": "com.yu.yucase-pro",
     "productName": "YuCase Pro",
     "asar": true,
@@ -24,6 +24,24 @@
       "icon": "case256x.png",
       "target": [
         "portable"
+      ],
+      "extraResources": [
+        {
+          "from": "backend/yucase_engine.exe",
+          "to": "backend/yucase_engine.exe"
+        }
+      ]
+    },
+    "mac": {
+      "icon": "case256x.png",
+      "target": [
+        "dmg"
+      ],
+      "extraResources": [
+        {
+          "from": "backend/yucase_engine",
+          "to": "backend/yucase_engine"
+        }
       ]
     },
     "portable": {
@@ -31,10 +49,6 @@
       "requestExecutionLevel": "admin"
     },
     "extraResources": [
-      {
-        "from": "backend/yucase_engine.exe",
-        "to": "backend/yucase_engine.exe"
-      },
       "rules.json",
       "case256x.png"
     ]
