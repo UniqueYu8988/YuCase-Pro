@@ -21,7 +21,7 @@
       "output": "release"
     },
     "win": {
-      "icon": "case256x.png",
+      "icon": "case512x.png",
       "target": [
         "portable"
       ],
@@ -33,7 +33,7 @@
       ]
     },
     "mac": {
-      "icon": "case256x.png",
+      "icon": "case512x.png",
       "target": [
         "dmg"
       ],
@@ -50,7 +50,7 @@
     },
     "extraResources": [
       "rules.json",
-      "case256x.png"
+      "case512x.png"
     ]
   },
   "keywords": [],

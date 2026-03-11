@@ -45,7 +45,7 @@ function createWindow() {
     backgroundColor: "#00000000",
     resizable: false,
     maximizable: false,
-    icon: path.join(__dirname, "../case256x.png"), // v1.0: 任务栏与窗口图标烙印
+    icon: path.join(__dirname, "../case512x.png"), // v1.0: 任务栏与窗口图标烙印
   });
 
   if (process.env.NODE_ENV === "development") {
