@@ -9,7 +9,7 @@
     "electron": "wait-on http://localhost:5173 && cross-env NODE_ENV=development electron .",
     "start": "concurrently \"npm run dev\" \"npm run electron\"",
     "build": "vite build && electron-builder",
-    "build:backend": "pyinstaller --onefile --noconsole --distpath backend --name yucase_engine backend/handler.py",
+    "build:backend": "pyinstaller --noconfirm --onefile --noconsole --distpath backend --name yucase_engine backend/handler.py",
     "build:all": "npm run build:backend && npm run build"
   },
     "build": {

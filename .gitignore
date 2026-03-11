@@ -87,14 +87,17 @@ Thumbs.db
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# Build directories
+# Build and Temp directories
+build/
 dist/
 release/
+*.app
 backend/__pycache__/
 backend/build/
 backend/yucase_engine
 backend/yucase_engine.exe
 backend/yucase_engine.spec
+dist-native/
 
 # Python
 *.pyc
@@ -105,7 +108,3 @@ venv/
 .venv/
 env/
 .env/
-
-# Electron-builder output
-dist-native
-release
