@@ -61,6 +61,7 @@ class ParserEngine:
                 extracted_data = {}
                 error_details = []
                 has_empty = False
+                fixed_keys = {rule['key'] for rule in rules if rule.get('isFixed')}
                 
                 for rule in rules:
                     key = rule['key']
@@ -144,7 +145,9 @@ class ParserEngine:
 
                 # 🛡️ v4.6 时序重构：在补全逻辑后，再进行全量缺失值质检
                 for k, v in extracted_data.items():
-                    if not v and k != "has_error" and k != "error_details":
+                    if k in fixed_keys or k in {"has_error", "error_details", "has_other_diagnosis", "has_fee_error"}:
+                        continue
+                    if v in ("", None):
                         has_empty = True
                         error_details.append(f"缺失字段 [{k}]")
 
